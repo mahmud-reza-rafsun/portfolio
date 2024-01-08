@@ -267,7 +267,7 @@ img.lef-img-2 {
     width: 500px;
     position: absolute;
     left: 10%;
-    top: 549%;
+    margin-top: -50px;
 }
 
 /* items section styling */
