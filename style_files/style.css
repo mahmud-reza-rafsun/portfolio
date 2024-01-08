@@ -159,7 +159,8 @@ main{
 }
 .coming-sec-left {
     width: 86%;
-    margin-right: 65px;
+    margin-right: 79px;
+    margin-top: -88px;
 }
 .coming-sec-left h4 {
     font-family: 'Inter', sans-serif;
@@ -199,6 +200,10 @@ main{
     font-size: 15px;
     font-weight: 200;
     margin-top: 13px;
+}
+.grrrp-imgg {
+    width: 140px;
+    margin: 25px 0 0 35px;
 }
 /* holiday-section styling */
 
@@ -254,7 +259,7 @@ img.lef-img-2 {
     width: 500px;
     position: absolute;
     left: 10%;
-    top: 528%;
+    top: 537%;
 }
 
 /* items section styling */
