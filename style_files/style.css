@@ -1,3 +1,4 @@
+/* primary css */
 *{
     margin: 0;
     padding: 0;
@@ -5,12 +6,29 @@
 img{
     max-width: 100%;
 }
+.primary-text{
+    color: rgb(0, 195, 255);
+}
+.primary-btn{
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid rgb(0, 195, 255);
+    padding: 12px 23px;
+    display: inline-block;
+    border-radius: 9px;
+    background: rgb(0, 195, 255);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+main{
+    margin: 0 85px;
+}
 /* banner section styling */
 .banner {
     position: relative;
     background: url(../img/Banner\ Image.png) no-repeat center center;
     padding: 170px 0;
-    margin: 50px 85px;
+    margin: 50px 0px;
     text-align: center;
     color: #fff;
     border-radius: 16px;
@@ -36,17 +54,6 @@ img{
 .banner-content h2{
     font-size: 72px;
 }
-.primary-btn{
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid rgb(0, 195, 255);
-    padding: 12px 23px;
-    display: inline-block;
-    border-radius: 9px;
-    background: rgb(0, 195, 255);
-    font-family: 'Inter', sans-serif;
-    transition: all 0.3s ease;
-}
 /* discount section styling */
 
 .discount-section{
@@ -57,18 +64,18 @@ img{
     width: 43%;
 }
 .discount-content h1 {
-    font-size: 88px;
-    color: crimson;
+    font-size: 80px;
+    color: rgb(0, 195, 255);
     margin-top: 40px;
     display: inline-block;
 }
 .discount-content p {
-    font-size: 22px;
+    font-size: 19px;
     margin: 25px 0;
-    color: crimson;
+    color: rgb(0, 195, 255);
 }
 .discount-content h3 {
-    font-size: 48px;
+    font-size: 45px;
     margin-bottom: 40px;
 }
 
@@ -78,7 +85,7 @@ img{
     position: relative;
     background: url(../img/Vectorrr.png) no-repeat center center;
     padding: 130px 0;
-    margin: 50px 85px;
+    margin: 50px 0px;
     color: #fff;
     border-radius: 16px;
     z-index: 999;
@@ -116,7 +123,7 @@ img{
 
 .testimonial-section {
     background: linear-gradient(180deg, rgba(255, 0, 0, 0.10) 0%, rgba(255, 0, 0, 0.00) 100%);
-    margin: 90px 85px;
+    margin: 90px 0px 60px 0;
     border-radius: 16px;
     padding: 148px 0;
     font-family: 'Inter', sans-serif;
@@ -125,9 +132,172 @@ img{
     text-align: center;
 }
 .test-m-content span{
-    color: crimson;
+    color: rgb(0, 195, 255);
 }
 .test-m-content h3 {
     font-size: 30px;
     line-height: 1.3cm;
+}
+.test-m-content a{
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+.test-m-content a:hover{
+    background: none;
+    color: rgb(0, 195, 255);
+}
+/* coming-soon section styling */
+.coming-soon-section{
+    width: 100%;
+}
+.coming-soon-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+}
+.coming-sec-left {
+    width: 86%;
+    margin-right: 65px;
+}
+.coming-sec-left h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #2CC3FF;
+    font-weight: 500;
+}
+.coming-sec-left h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 35px;
+    letter-spacing: 0.1cm;
+    margin: 10px 0;
+}
+.coming-sec-left p{
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+.coming-sec-img {
+    border: 7px solid rgb(0, 195, 255);
+    border-radius: 50%;
+    padding: 15px;
+    text-align: center;
+    width: 40%;
+    margin-right: 50px;
+}
+.coming-sec-right {
+    font-family: 'Inter', sans-serif;
+    width: 70%;
+    margin-left: 75px;
+}
+.coming-sec-right h2{
+    color: #2CC3FF;
+    font-size: 30px;
+}
+.coming-sec-right p {
+    font-size: 15px;
+    font-weight: 200;
+    margin-top: 13px;
+}
+/* holiday-section styling */
+
+.holiday-section{
+    width: 100%;
+    margin: 70px 0;
+}
+.holiday-heading{
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+.holiday-heading h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+.holiday-heading h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 50px;
+    margin: 15px 0;
+}
+.holiday-heading h2 span{
+    color: #2CC3FF;
+}
+.holiday-heading p{
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    padding-bottom: 70px;
+}
+.img-left {
+    width: 45%;
+}
+.holiday-img{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.img-right img .img-2{
+    width: 350px;
+    background-size: cover;
+}
+img.img-1 {
+    position: absolute;
+    left: 50%;
+    margin-top: 56px;
+}
+img.lef-img-2 {
+    margin-top: -8px;
+}
+.img-left img {
+    width: 500px;
+    position: absolute;
+    left: 10%;
+    top: 528%;
+}
+
+/* items section styling */
+
+.items-section{
+    width: 100%;
+    margin: 70px 0;
+}
+.items-heading {
+    width: 71%;
+}
+.items-heading h4{
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #2CC3FF;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+.items-heading h2{
+    font-family: 'Merriweather', serif;
+    font-size: 35px;
+    margin: 10px 0;
+}
+.items-heading p{
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    padding-bottom: 50px;
+}
+.card {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+.card:nth-child(3n+3){
+    margin-right: 0;
+}
+
+/* newsletter-section styling */
+
+.newsletter-section{
+    border-radius: 16px;
+    background: rgba(255, 0, 0, 0.05);
 }
