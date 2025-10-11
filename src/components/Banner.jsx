@@ -97,7 +97,7 @@ const Hero = () => <section className="relative z-10 text-center py-16 sm:py-24 
 </section>;
 
 export default function Banner() {
-    return <div className="relative w-full overflow-hidden bg-white dark:bg-black">
+    return <div className="relative w-full overflow-hidden bg-white py-0 md:py-16 lg:py-24 xl:py-32 dark:bg-black">
         <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
             <div className="w-[40rem] h-[40rem] bg-gradient-to-tr from-orange-200 dark:from-orange-800/30 to-transparent opacity-20 dark:opacity-10 rounded-full blur-3xl" />
         </div>

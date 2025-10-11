@@ -1,7 +1,7 @@
-import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Skills from "@/components/Skills";
+import { ThemeProvider } from "next-themes";
 
 export const metadata = {
   title: "Personal Portfolio",
@@ -10,17 +10,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body>
-        <nav>
-          <Navbar />
-        </nav>
-
-        <main>
-          <Banner />
-          <Skills />
-          {children}
-        </main>
+        <ThemeProvider attribute="class"  defaultTheme="light" >
+          <nav>
+            <Navbar />
+          </nav>
+          <main>
+            {children}
+          </main>
+          <footer>
+            <Footer/>
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
