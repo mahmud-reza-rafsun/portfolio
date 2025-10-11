@@ -70,18 +70,18 @@ const Hero = () => <section className="relative z-10 text-center py-16 sm:py-24 
                 className="text-blue-600"
             />
         </div>
-        <h1 className="mt-3 mb-5 text-xl sm:text-3xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
+        <h1 className="mt-3 mb-5 text-3xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
             I'am{" "}
             <span className="text-orange-500">Mahmud Reza Rafsun</span>
         </h1>
-        <div className="text-4xl font-bold">
+        <div className="text-2xl lg:text-5xl font-bold">
             <FlipWords
                 words={["Web Devekoper", "Front-End Developer", "MERN Stack Developer", "Full Stack Developer"]}
                 duration={2000}
                 className="text-blue-600"
             />
         </div>
-        <p className="mt-6 text-4xl sm:text-base lg:text-lg font-normal tracking-tight text-gray-900 dark:text-white leading-tight">
+        <p className="mt-6 sm:text-base lg:text-lg font-normal tracking-tight text-gray-900 dark:text-white leading-tight">
             You&apos;ve never made a website this{" "}
             <span className="text-orange-500">fast before</span>
         </p>

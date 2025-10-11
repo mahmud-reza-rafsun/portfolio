@@ -70,7 +70,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="py-16 bg-gray-50 dark:bg-gray-900 ">
+    <div className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-5xl mx-auto text-center mb-10">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
           My Skills
@@ -80,7 +80,7 @@ const Skills = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto px-5 lg:px-0">
         {skills.map((skill, index) => (
           <div
             key={index}

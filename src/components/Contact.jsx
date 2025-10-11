@@ -23,7 +23,7 @@ const Contact = () => {
             <div className='text-center'>
                 <h2 className='text-4xl font-bold text-gray-800 dark:text-white'>Contact  <span className='text-orange-500'>with</span> Me </h2>
             </div>
-            <div className="flex items-center justify-center p-4 gap-x-20 py-20">
+            <div className="flex lg:flex-row flex-col items-center justify-center gap-5 p-4 gap-x-20 py-16 lg:py-20">
                 <div className="w-full max-w-xl">
 
                     { }
@@ -89,7 +89,7 @@ const Contact = () => {
                     </div>
                 </div>
                 {/* map section */}
-                <div className="w-[600px] h-[520px] rounded-2xl overflow-hidden shadow-lg">
+                <div className="w-[430px] h-[360px] lg:w-[600px] lg:h-[520px] rounded-2xl overflow-hidden shadow-lg">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116833.97303520625!2d90.3372882549703!3d23.780818635553448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2z4Kai4Ka-4KaV4Ka-!5e0!3m2!1sbn!2sbd!4v1760177462205!5m2!1sbn!2sbd"
                         width="100%"
