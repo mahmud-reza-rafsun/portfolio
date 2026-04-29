@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body>
-        <ThemeProvider attribute="class"  defaultTheme="light" >
+        <ThemeProvider attribute="class" defaultTheme="light" >
           <nav>
             <Navbar />
           </nav>
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
           <footer>
-            <Footer/>
+            <Footer />
           </footer>
         </ThemeProvider>
       </body>

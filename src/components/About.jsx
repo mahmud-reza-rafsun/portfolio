@@ -11,7 +11,7 @@ const Card = ({
 const Badge = ({
     children,
     className = ""
-}) => <span className={`inline-flex items-center rounded-full bg-sky-100 px-2.5 py-0.5 text-xs font-medium text-sky-800 dark:bg-sky-900/30 dark:text-sky-300 ${className}`}>
+}) => <span className={`inline-flex items-center rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-medium text-orange-800 dark:bg-sky-900/30 dark:text-orange-300 ${className}`}>
         {children}
     </span>;
 const defaultTimelineData = [{
@@ -43,38 +43,52 @@ export default function About({
     data = defaultTimelineData
 }) {
     return (
-        <div className="container mx-auto py-20">
+        <div className="container mx-auto py-20 px-0 lg:px-8">
             <div className="text-center pb-8">
                 <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-11 tracking-tight">
                     Professional Timeline
                 </h1>
             </div>
-            <div className="flex lg:flex-row flex-col justify-between items-center gap-5 ">
+            <div className="flex lg:flex-row flex-col justify-between items-center gap-5">
                 <div>
-                    <Card>
-                        <div className="space-y-10">
-                            {data.map((item, index) => <div key={item.id} className="relative group transition-all duration-300 hover:translate-x-1">
-                                {index !== data.length - 1 && <div className="absolute left-3 top-8 h-full w-0.5 bg-gradient-to-b from-black via-gray-400 to-white opacity-60 group-hover:opacity-100 transition-opacity duration-300" />}
-                                <div className="flex gap-6">
-                                    <div className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 to-sky-600 mt-1 shadow-md group-hover:scale-110 transition-transform duration-300">
-                                        <div className="h-2.5 w-2.5 rounded-full bg-gray-100 dark:bg-white shadow-2xl dark:shadow-sm" />
-                                    </div>
-                                    <div className="flex-1 space-y-3 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
-                                        <div className="space-y-1">
-                                            <h3 className="font-semibold text-lg text-gray-950 dark:text-white group-hover:text-sky-700 dark:group-hover:text-sky-300 transition-colors duration-300">
-                                                {item.title}
-                                            </h3>
-                                            <div className="flex items-center gap-2">
-                                                <p className="text-sky-600 dark:text-sky-400 font-medium">{item.company}</p>
-                                                <Badge>{item.date}</Badge>
-                                            </div>
+                    <Card className="p-4 sm:p-6 lg:p-8">
+                        <div className="space-y-8 sm:space-y-10">
+                            {data.map((item, index) => (
+                                <div key={item.id} className="relative group transition-all duration-300 hover:translate-x-1">
+                                    {/* Timeline Line - hidden on very small screens or adjusted for mobile */}
+                                    {index !== data.length - 1 && (
+                                        <div className="absolute left-3 top-8 h-full w-0.5 bg-gradient-to-b from-orange-500 via-gray-400 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-300" />
+                                    )}
+
+                                    <div className="flex gap-4 sm:gap-6">
+                                        {/* Dot Indicator */}
+                                        <div className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 mt-1 shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <div className="h-2.5 w-2.5 rounded-full bg-white shadow-sm" />
                                         </div>
-                                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:bg-gray-50 dark:group-hover:bg-gray-800/30 rounded-lg p-3 -m-3 transition-all duration-300">
-                                            {item.description}
-                                        </p>
+
+                                        {/* Content Area */}
+                                        <div className="flex-1 space-y-3">
+                                            <div className="space-y-1">
+                                                <h3 className="font-bold text-base sm:text-lg text-gray-950 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
+                                                    {item.title}
+                                                </h3>
+                                                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                                                    <p className="text-orange-600 dark:text-orange-400 font-semibold text-sm sm:text-base leading-none">
+                                                        {item.company}
+                                                    </p>
+                                                    <div className="w-fit">
+                                                        <Badge className="text-[10px] sm:text-xs py-0 px-2">{item.date}</Badge>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed group-hover:bg-gray-50 dark:group-hover:bg-gray-800/40 rounded-xl p-2 sm:p-3 -m-2 sm:-m-3 transition-all duration-300 border border-transparent group-hover:border-gray-100 dark:group-hover:border-gray-700/50">
+                                                {item.description}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>)}
+                            ))}
                         </div>
                     </Card>
                 </div>

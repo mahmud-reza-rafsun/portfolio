@@ -89,15 +89,16 @@ const Contact = () => {
                     </div>
                 </div>
                 {/* map section */}
-                <div className="w-[430px] h-[360px] lg:w-[600px] lg:h-[520px] rounded-2xl overflow-hidden shadow-lg">
+                <div className="w-full max-w-[600px] aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden shadow-lg border border-gray-800">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116833.97303520625!2d90.3372882549703!3d23.780818635553448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2z4Kai4Ka-4KaV4Ka-!5e0!3m2!1sbn!2sbd!4v1760177462205!5m2!1sbn!2sbd"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116345.54580252875!2d89.1724559!3d24.0044569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe85038e92063d%3A0x6ec04097491f2479!2sPabna!5e0!3m2!1sen!2sbd!4v1714394000000!5m2!1sen!2sbd"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
+                        title="Location Map"
                     ></iframe>
                 </div>
             </div>
