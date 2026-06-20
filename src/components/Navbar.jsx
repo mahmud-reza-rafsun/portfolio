@@ -25,12 +25,22 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { href: "/", icon: <IoHomeOutline />, label: "Home" },
-    { href: "#about", icon: <FiUser />, label: "About" },
-    { href: "#skills", icon: <FiCode />, label: "Skills" },
-    { href: "#project", icon: <FiLayers />, label: "Projects" },
-    { href: "#contact", icon: <FiMail />, label: "Contact" },
+    { href: "/#home", icon: <IoHomeOutline />, label: "Home", id: null },
+    { href: "#about", icon: <FiUser />, label: "About", id: "about" },
+    { href: "#skills", icon: <FiCode />, label: "Skills", id: "skills" },
+    { href: "#project", icon: <FiLayers />, label: "Projects", id: "project" },
+    { href: "#contact", icon: <FiMail />, label: "Contact", id: "contact" },
   ];
+
+  const handleNavClick = (e, id) => {
+    if (id) {
+      e.preventDefault();
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   const toggleTheme = () =>
     setTheme(theme === "dark" ? "light" : "dark");
@@ -53,6 +63,7 @@ const Navbar = () => {
             <Link
               key={item.label}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.id)}
               className="flex items-center gap-2 px-4 py-2 text-sm rounded-full text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/10 transition"
             >
               {item.icon}

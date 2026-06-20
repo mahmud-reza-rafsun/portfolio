@@ -80,7 +80,7 @@ const socialLinks = [
 
 export default function Banner() {
     return (
-        <div className="relative w-full min-h-screen flex items-center justify-center bg-[#f8fafc] dark:bg-[#020617] overflow-hidden px-6 transition-colors duration-500">
+        <div id="#home" className="relative w-full min-h-screen flex items-center justify-center bg-[#f8fafc] dark:bg-[#020617] overflow-hidden px-6 transition-colors duration-500">
 
             {/* Background Glows */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">

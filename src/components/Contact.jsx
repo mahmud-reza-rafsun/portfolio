@@ -30,7 +30,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="relative min-h-screen bg-white dark:bg-[#020617] py-24 px-6 overflow-hidden transition-colors duration-300">
+        <section id='contact' className="relative min-h-screen bg-white dark:bg-[#020617] py-24 px-6 overflow-hidden transition-colors duration-300">
 
             {/* Background Glow Effects - আপনার থিমের সাথে মিল রেখে */}
             <div className="absolute top-1/4 -right-1/4 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-950/30 rounded-full blur-[120px] pointer-events-none"></div>

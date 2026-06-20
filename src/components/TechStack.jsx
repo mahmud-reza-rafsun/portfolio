@@ -37,7 +37,6 @@ const TechStack = () => {
 
   const TechIcon = ({ src, alt }) => (
     <div className="flex flex-col items-center group">
-      {/* আইকন কন্টেইনারে গ্লাস ইফেক্ট এবং প্রিমিয়াম হোভার বর্ডার */}
       <div className="w-16 h-16 rounded-full bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-white/20 dark:border-slate-800/80 flex items-center justify-center p-3 mb-2 shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:border-slate-300 dark:group-hover:border-slate-600">
         <img src={src} alt={alt} className="w-full h-full object-contain" />
       </div>
@@ -48,18 +47,13 @@ const TechStack = () => {
   return (
     <div className="bg-[#f8fafc] dark:bg-[#020617] transition-colors duration-500">
       <CustomStyles />
-      <section className="relative w-full flex flex-col items-center justify-center py-24 px-6 overflow-hidden">
+      <section id='skills' className="relative w-full flex flex-col items-center justify-center py-24 px-6 overflow-hidden">
 
-        {/* ব্যানার ডিজাইনের সাথে মিল রেখে গ্লাস মরফিজম ব্যাকগ্রাউন্ড গ্লো */}
-        {/* Ambient Glowing Backgrounds - New Fresh Positions */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* ডানদিকের ওপরের কোণায় গ্লো */}
           <div className="absolute -top-[10%] -right-[10%] w-[45rem] h-[45rem] bg-indigo-500/10 dark:bg-indigo-950/15 blur-[140px] rounded-full" />
 
-          {/* স্ক্রিনের একদম মাঝখানে বড় আকর্ষনীয় গ্লো */}
           <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[55rem] h-[55rem] bg-blue-400/15 dark:bg-blue-950/20 blur-[160px] rounded-full" />
 
-          {/* বামদিকের নিচে হালকা গ্লো ব্যালেন্স করার জন্য */}
           <div className="absolute bottom-[-5%] left-[-5%] w-[30rem] h-[30rem] bg-slate-200/40 dark:bg-slate-900/30 blur-[100px] rounded-full" />
         </div>
 

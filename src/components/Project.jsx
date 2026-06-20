@@ -3,6 +3,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
+import { section } from "motion/react-client";
 
 const ProjectCard = ({
     title,
@@ -14,78 +15,80 @@ const ProjectCard = ({
     liveLink,
 }) => {
     return (
-        <div className="group bg-white/10 dark:bg-slate-900/20 backdrop-blur-2xl border border-white/20 dark:border-slate-800/80 rounded-[32px] p-5 shadow-2xl hover:border-blue-500/30 dark:hover:border-blue-500/30 transition-all duration-300 h-full flex flex-col">
+        <section id="project">
+            <div className="group bg-white/10 dark:bg-slate-900/20 backdrop-blur-2xl border border-white/20 dark:border-slate-800/80 rounded-[32px] p-5 shadow-2xl hover:border-blue-500/30 dark:hover:border-blue-500/30 transition-all duration-300 h-full flex flex-col">
 
-            {/* Image Container */}
-            <div className="relative overflow-hidden rounded-2xl mb-6 aspect-video w-full bg-slate-100 dark:bg-slate-900">
-                <img
-                    src={image}
-                    alt={title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none"></div>
-            </div>
+                {/* Image Container */}
+                <div className="relative overflow-hidden rounded-2xl mb-6 aspect-video w-full bg-slate-100 dark:bg-slate-900">
+                    <img
+                        src={image}
+                        alt={title}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none"></div>
+                </div>
 
-            {/* Content */}
-            <div className="flex-grow">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
-                    {title}
-                </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
-                    {description}
-                </p>
+                {/* Content */}
+                <div className="flex-grow">
+                    <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
+                        {title}
+                    </h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
+                        {description}
+                    </p>
 
-                {/* Tech Stack Chips */}
-                <div className="mt-6 flex flex-wrap gap-2">
-                    {techStack.map((tech, idx) => (
-                        <span
-                            key={idx}
-                            className="text-[11px] font-medium px-3 py-1 rounded-full bg-slate-100/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 backdrop-blur-sm"
+                    {/* Tech Stack Chips */}
+                    <div className="mt-6 flex flex-wrap gap-2">
+                        {techStack.map((tech, idx) => (
+                            <span
+                                key={idx}
+                                className="text-[11px] font-medium px-3 py-1 rounded-full bg-slate-100/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 backdrop-blur-sm"
+                            >
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Action Links */}
+                <div className="mt-8 pt-6 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200/50 dark:border-slate-800/50">
+                    <div className="flex flex-wrap gap-3">
+                        {/* Frontend Repo Button */}
+                        <Link
+                            href={clientRepo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-fit flex items-center gap-2 cursor-pointer bg-slate-100/50 dark:bg-white/5 backdrop-blur-md dark:text-gray-200 px-5 py-2 rounded-full border border-slate-200 dark:border-white/10 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-all duration-300 shadow-sm active:scale-95 group"
                         >
-                            {tech}
-                        </span>
-                    ))}
-                </div>
-            </div>
+                            <FaGithub size={18} className="text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
+                            <span className="text-xs font-semibold">Frontend</span>
+                        </Link>
 
-            {/* Action Links */}
-            <div className="mt-8 pt-6 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200/50 dark:border-slate-800/50">
-                <div className="flex flex-wrap gap-3">
-                    {/* Frontend Repo Button */}
+                        {/* Backend Repo Button */}
+                        <Link
+                            href={serverRepo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-fit flex items-center gap-2 cursor-pointer bg-slate-100/50 dark:bg-white/5 backdrop-blur-md dark:text-gray-200 px-5 py-2 rounded-full border border-slate-200 dark:border-white/10 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-all duration-300 shadow-sm active:scale-95 group"
+                        >
+                            <FaGithub size={18} className="text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
+                            <span className="text-xs font-semibold">Backend</span>
+                        </Link>
+                    </div>
+
+                    {/* Live Preview Button */}
                     <Link
-                        href={clientRepo}
+                        href={liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-fit flex items-center gap-2 cursor-pointer bg-slate-100/50 dark:bg-white/5 backdrop-blur-md dark:text-gray-200 px-5 py-2 rounded-full border border-slate-200 dark:border-white/10 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-all duration-300 shadow-sm active:scale-95 group"
+                        className="flex items-center gap-2 text-sm font-bold text-indigo-500 hover:text-indigo-400 transition-all group/link bg-indigo-500/5 dark:bg-indigo-500/10 px-4 py-2 rounded-full border border-indigo-500/20 hover:border-indigo-500/40 backdrop-blur-sm"
                     >
-                        <FaGithub size={18} className="text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
-                        <span className="text-xs font-semibold">Frontend</span>
-                    </Link>
-
-                    {/* Backend Repo Button */}
-                    <Link
-                        href={serverRepo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-fit flex items-center gap-2 cursor-pointer bg-slate-100/50 dark:bg-white/5 backdrop-blur-md dark:text-gray-200 px-5 py-2 rounded-full border border-slate-200 dark:border-white/10 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-all duration-300 shadow-sm active:scale-95 group"
-                    >
-                        <FaGithub size={18} className="text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
-                        <span className="text-xs font-semibold">Backend</span>
+                        <span>Live Preview</span>
+                        <FiExternalLink size={18} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                     </Link>
                 </div>
-
-                {/* Live Preview Button */}
-                <Link
-                    href={liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-bold text-indigo-500 hover:text-indigo-400 transition-all group/link bg-indigo-500/5 dark:bg-indigo-500/10 px-4 py-2 rounded-full border border-indigo-500/20 hover:border-indigo-500/40 backdrop-blur-sm"
-                >
-                    <span>Live Preview</span>
-                    <FiExternalLink size={18} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                </Link>
             </div>
-        </div>
+        </section>
     );
 };
 

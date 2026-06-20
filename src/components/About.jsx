@@ -72,14 +72,14 @@ export default function About({
                     </p>
                 </div>
 
-                <div className="flex lg:flex-row flex-col items-stretch justify-center gap-8 lg:gap-10">
+                <div className="flex lg:flex-row flex-col items-stretch justify-center gap-4 sm:gap-6 lg:gap-10">
 
                     {/* Image Section */}
                     <div className="w-full lg:w-1/2 group">
-                        <div className="relative h-full min-h-[400px] lg:min-h-[500px]">
+                        <div className="relative h-auto min-h-[300px] sm:min-h-[350px] lg:h-full lg:min-h-[500px]">
                             <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 dark:from-blue-500/10 dark:to-transparent rounded-[40px] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
 
-                            <div className="relative h-full w-full overflow-hidden rounded-[32px] bg-white/5 dark:bg-slate-900/20 backdrop-blur-2xl border border-white/20 dark:border-slate-800 p-4 shadow-2xl">
+                            <div className="relative w-full aspect-square sm:aspect-video md:aspect-auto md:h-96 lg:h-full overflow-hidden rounded-[32px] bg-white/5 dark:bg-slate-900/20 backdrop-blur-2xl border border-white/20 dark:border-slate-800 p-4 shadow-2xl">
                                 <div className="relative w-full h-full rounded-[24px] overflow-hidden">
                                     <Image
                                         src="/about-me.png"
@@ -87,6 +87,7 @@ export default function About({
                                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                                         alt="profile"
                                         priority
+                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
                                     />
                                     {/* Glass Overlay on Image */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent"></div>
@@ -98,7 +99,7 @@ export default function About({
                     {/* Timeline Section */}
                     <div className="w-full lg:w-1/2">
                         <Card>
-                            <div className="flex flex-col h-full justify-between space-y-8">
+                            <div className="flex flex-col h-full justify-between space-y-6 sm:space-y-8">
                                 {data.map((item, index) => (
                                     <div key={item.id} className="relative group/item transition-all duration-300">
                                         {/* Timeline Line */}
@@ -106,19 +107,19 @@ export default function About({
                                             <div className="absolute left-3 top-8 h-full w-0.5 bg-slate-200/50 dark:bg-slate-800/50 group-hover/item:bg-blue-500/30 transition-colors duration-300" />
                                         )}
 
-                                        <div className="flex gap-5">
+                                        <div className="flex gap-4 sm:gap-5">
                                             {/* Dot */}
                                             <div className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 group-hover/item:bg-blue-500 transition-all duration-300">
                                                 <div className="h-2 w-2 rounded-full bg-slate-400 group-hover/item:bg-white" />
                                             </div>
 
                                             {/* Content */}
-                                            <div className="flex-1">
-                                                <div className="flex items-center justify-between mb-1">
+                                            <div className="flex-1 pb-2">
+                                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1 gap-1 sm:gap-0">
                                                     <h3 className="font-bold text-base sm:text-lg text-slate-900 dark:text-white group-hover/item:text-blue-500 dark:group-hover/item:text-blue-400 transition-colors">
                                                         {item.title}
                                                     </h3>
-                                                    <Badge>{item.date}</Badge>
+                                                    <Badge className="w-fit">{item.date}</Badge>
                                                 </div>
                                                 <p className="text-blue-600 dark:text-blue-400 font-semibold text-[13px] mb-2">
                                                     {item.company}
