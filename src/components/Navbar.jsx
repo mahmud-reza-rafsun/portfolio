@@ -15,8 +15,10 @@ import { IoHomeOutline } from "react-icons/io5";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -36,11 +38,12 @@ const Navbar = () => {
   return (
     <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full px-4">
       <div
-        className={`mx-auto max-w-6xl flex items-center justify-between px-4 py-2 rounded-full glass border transition-all duration-300
-    bg-white/70 dark:bg-[#0b1220]/70 backdrop-blur-xl border-gray-300/40 dark:border-gray-700/50`}
+        className={`mx-auto max-w-6xl flex items-center justify-between px-4 py-2 rounded-full glass transition-all duration-300
+        bg-white/70 dark:bg-[#0b1220]/70 backdrop-blur-xl 
+        border border-gray-200 dark:border-gray-800/80 shadow-sm`}
       >
         {/* LEFT: Logo */}
-        <Link href="/" className="font-bold text-lg px-2">
+        <Link href="/" className="font-bold text-lg px-2 text-gray-900 dark:text-white">
           R
         </Link>
 
@@ -61,9 +64,9 @@ const Navbar = () => {
         {/* RIGHT: Theme */}
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-full cursor-pointer hover:bg-black/5 dark:hover:bg-white/10 transition"
+          className="p-2 rounded-full cursor-pointer hover:bg-black/5 dark:hover:bg-white/10 transition text-gray-700 dark:text-gray-300"
         >
-          {theme === "dark" ? <SunMedium size={18} /> : <Moon size={18} />}
+          {mounted && theme === "dark" ? <SunMedium size={18} /> : <Moon size={18} />}
         </button>
       </div>
     </div>

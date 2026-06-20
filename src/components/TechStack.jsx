@@ -29,15 +29,16 @@ const TechStack = () => {
   ];
 
   const CheckIcon = () => (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-1">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-1 flex-shrink-0">
       <path d="M9 11L12 14L22 4" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C13.6814 3 15.2492 3.46162 16.5866 4.26389" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 
   const TechIcon = ({ src, alt }) => (
-    <div className="flex flex-col items-center">
-      <div className="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center p-3 mb-2 shadow-inner">
+    <div className="flex flex-col items-center group">
+      {/* আইকন কন্টেইনারে গ্লাস ইফেক্ট এবং প্রিমিয়াম হোভার বর্ডার */}
+      <div className="w-16 h-16 rounded-full bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-white/20 dark:border-slate-800/80 flex items-center justify-center p-3 mb-2 shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:border-slate-300 dark:group-hover:border-slate-600">
         <img src={src} alt={alt} className="w-full h-full object-contain" />
       </div>
       <p className="text-[13px] text-slate-600 dark:text-slate-400/90 text-center font-medium">{alt}</p>
@@ -45,19 +46,30 @@ const TechStack = () => {
   );
 
   return (
-    <div className="bg-white dark:bg-[#020617] transition-colors duration-300">
+    <div className="bg-[#f8fafc] dark:bg-[#020617] transition-colors duration-500">
       <CustomStyles />
-      <section className="relative w-full flex flex-col items-center justify-center py-24 px-4 overflow-hidden">
+      <section className="relative w-full flex flex-col items-center justify-center py-24 px-6 overflow-hidden">
+
+        {/* ব্যানার ডিজাইনের সাথে মিল রেখে গ্লাস মরফিজম ব্যাকগ্রাউন্ড গ্লো */}
+        {/* Ambient Glowing Backgrounds - New Fresh Positions */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* ডানদিকের ওপরের কোণায় গ্লো */}
+          <div className="absolute -top-[10%] -right-[10%] w-[45rem] h-[45rem] bg-indigo-500/10 dark:bg-indigo-950/15 blur-[140px] rounded-full" />
+
+          {/* স্ক্রিনের একদম মাঝখানে বড় আকর্ষনীয় গ্লো */}
+          <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[55rem] h-[55rem] bg-blue-400/15 dark:bg-blue-950/20 blur-[160px] rounded-full" />
+
+          {/* বামদিকের নিচে হালকা গ্লো ব্যালেন্স করার জন্য */}
+          <div className="absolute bottom-[-5%] left-[-5%] w-[30rem] h-[30rem] bg-slate-200/40 dark:bg-slate-900/30 blur-[100px] rounded-full" />
+        </div>
 
         <div className="relative z-10 text-center mb-16">
           <h2 className="text-5xl font-medium text-slate-900 dark:text-white mb-3 tracking-tight">Technologies</h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 font-medium">My Technologies Level</p>
         </div>
 
-        <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-950/30 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-slate-200/20 dark:bg-slate-950/20 rounded-full blur-[150px] pointer-events-none border border-slate-100 dark:border-slate-900"></div>
-
-        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-10 mb-20">
+        {/* Grid Icon Elements */}
+        <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-10 mb-24">
           <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
           <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
           <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
@@ -66,14 +78,10 @@ const TechStack = () => {
           <TechIcon src="https://media.daily.dev/image/upload/s--nmy-SeMz--/f_auto/v1733385075/squads/f6e60edb-ee79-4dee-914c-841e14638aa9" alt="ShadcnUI" />
           <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
           <TechIcon src="https://cdn.simpleicons.org/express/black/white" alt="Express" />
-
-          <div className="w-full h-0"></div>
-
           <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
           <TechIcon src="https://cdn.simpleicons.org/prisma/black/white" alt="Prisma" />
           <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-          <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
-          <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" />
+          <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
           <TechIcon src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Github" />
           <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
           <TechIcon src="https://better-auth-console.com/favicon/favicon.svg" alt="BetterAuth" />
@@ -84,10 +92,11 @@ const TechStack = () => {
           <p className="text-lg text-slate-600 dark:text-slate-400 font-medium">My Technical Level</p>
         </div>
 
+        {/* Glassmorphic Skill Cards with Exact Hover Colors */}
         <div className="relative z-10 grid md:grid-cols-2 gap-10 w-full max-w-6xl mx-auto">
 
           {/* Frontend Card */}
-          <div className="bg-white/60 dark:bg-slate-950/60 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-[32px] p-12 shadow-xl dark:shadow-[0_0_60px_-15px_rgba(30,41,59,0.3)] hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300">
+          <div className="bg-white/10 dark:bg-slate-900/20 backdrop-blur-2xl border border-white/20 dark:border-slate-800/80 rounded-[32px] p-12 shadow-2xl hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300">
             <h3 className="text-center text-2xl font-semibold text-slate-900 dark:text-white mb-12 tracking-tight">Frontend Developer</h3>
             <div className="grid grid-cols-2 gap-x-10 gap-y-8">
               {frontendSkills.map((skill, index) => (
@@ -103,7 +112,7 @@ const TechStack = () => {
           </div>
 
           {/* Backend Card */}
-          <div className="bg-white/60 dark:bg-slate-950/60 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-[32px] p-12 shadow-xl dark:shadow-[0_0_60px_-15px_rgba(30,41,59,0.3)] hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300">
+          <div className="bg-white/10 dark:bg-slate-900/20 backdrop-blur-2xl border border-white/20 dark:border-slate-800/80 rounded-[32px] p-12 shadow-2xl hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300">
             <h3 className="text-center text-2xl font-semibold text-slate-900 dark:text-white mb-12 tracking-tight">Backend Developer</h3>
             <div className="grid grid-cols-2 gap-x-10 gap-y-8">
               {backendSkills.map((skill, index) => (
@@ -119,8 +128,6 @@ const TechStack = () => {
           </div>
 
         </div>
-
-        <div className="absolute top-[60%] right-[10%] w-5 h-5 bg-indigo-500/50 rounded-full blur-md pointer-events-none"></div>
 
       </section>
     </div>

@@ -14,20 +14,21 @@ const ProjectCard = ({
     liveLink,
 }) => {
     return (
-        <div className="group bg-white/60 dark:bg-slate-950/60 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-[32px] p-5 shadow-xl dark:shadow-[0_0_60px_-15px_rgba(30,41,59,0.3)] hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 h-full flex flex-col">
+        <div className="group bg-white/10 dark:bg-slate-900/20 backdrop-blur-2xl border border-white/20 dark:border-slate-800/80 rounded-[32px] p-5 shadow-2xl hover:border-blue-500/30 dark:hover:border-blue-500/30 transition-all duration-300 h-full flex flex-col">
 
             {/* Image Container */}
-            <div className="relative overflow-hidden rounded-2xl mb-6">
+            <div className="relative overflow-hidden rounded-2xl mb-6 aspect-video w-full bg-slate-100 dark:bg-slate-900">
                 <img
                     src={image}
                     alt={title}
-                    className="w-full h-68 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none"></div>
             </div>
 
             {/* Content */}
             <div className="flex-grow">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3 tracking-tight">
+                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
                     {title}
                 </h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
@@ -39,7 +40,7 @@ const ProjectCard = ({
                     {techStack.map((tech, idx) => (
                         <span
                             key={idx}
-                            className="text-[11px] font-medium px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400"
+                            className="text-[11px] font-medium px-3 py-1 rounded-full bg-slate-100/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 backdrop-blur-sm"
                         >
                             {tech}
                         </span>
@@ -48,7 +49,7 @@ const ProjectCard = ({
             </div>
 
             {/* Action Links */}
-            <div className="mt-8 pt-6 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 dark:border-slate-800/50">
+            <div className="mt-8 pt-6 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200/50 dark:border-slate-800/50">
                 <div className="flex flex-wrap gap-3">
                     {/* Frontend Repo Button */}
                     <Link
@@ -73,7 +74,7 @@ const ProjectCard = ({
                     </Link>
                 </div>
 
-                {/* Live Preview - Fancy Style */}
+                {/* Live Preview Button */}
                 <Link
                     href={liveLink}
                     target="_blank"
@@ -92,7 +93,7 @@ const Projects = () => {
     const myProjects = [
         {
             title: "Skill Bridge",
-            image: "/skill-bridge.png", //
+            image: "/skill-bridge.png",
             description: "A full-stack tutor marketplace connecting learners with expert tutors.",
             techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Express", "BetterAuth"],
             liveLink: "https://skill-bridge-front-end.vercel.app/",
@@ -101,7 +102,7 @@ const Projects = () => {
         },
         {
             title: "EcoSpark Hub",
-            image: "/eco-spark-hub.png", //
+            image: "/eco-spark-hub.png",
             description: "Platform for sharing and funding sustainability ideas with community voting.",
             techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Express", "BetterAuth"],
             liveLink: "https://eco-spark-hub-frontend.vercel.app/",
@@ -111,9 +112,13 @@ const Projects = () => {
     ];
 
     return (
-        <section className="relative min-h-screen bg-white dark:bg-[#020617] py-24 px-6 overflow-hidden transition-colors duration-300">
+        <section className="relative min-h-screen bg-[#f8fafc] dark:bg-[#020617] py-24 px-6 overflow-hidden transition-colors duration-500">
 
-            <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-950/30 rounded-full blur-[120px] pointer-events-none"></div>
+            {/* Background Glow Effects */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[20%] left-[-10%] w-[40rem] h-[40rem] bg-blue-400/20 dark:bg-blue-600/10 blur-[120px] rounded-full" />
+                <div className="absolute bottom-[20%] right-[-10%] w-[35rem] h-[35rem] bg-indigo-400/10 dark:bg-indigo-900/10 blur-[120px] rounded-full" />
+            </div>
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 <div className="text-center mb-20">
